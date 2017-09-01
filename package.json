@@ -17,8 +17,10 @@
     "url": "git+https://github.com/YttriumJS/yttbody.git"
   },
   "keywords": [
+    "yttrium",
     "YttriumJS",
     "yttrium-server",
+    "backend",
     "body-parser",
     "body",
     "parser"
