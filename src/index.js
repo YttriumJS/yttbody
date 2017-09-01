@@ -2,7 +2,7 @@ const bodyParser = require('body-parser');
 
 const wrapper = (parser, options) => {
   const parserMiddleware = bodyParser[parser](options);
-  return (req) => (new Promise((resolve, reject) => {
+  return req => (new Promise((resolve, reject) => {
     parserMiddleware(req, null, (e) => {
       if (e) {
         return reject(e);
@@ -13,17 +13,17 @@ const wrapper = (parser, options) => {
 };
 
 const middlewareFactory = {
-  json: (options) => wrapper('json', options),
-  raw: (options) => wrapper('raw', options),
-  text: (options) => wrapper('text', options),
-  urlencoded: (options) => wrapper('urlencoded', Object.assign({}, options, { extended: true })),
+  json: options => wrapper('json', options),
+  raw: options => wrapper('raw', options),
+  text: options => wrapper('text', options),
+  urlencoded: options => wrapper('urlencoded', Object.assign({}, options, { extended: true })),
 };
 
 // a Yttrium plugin has a name and a function
 // it becomes $(anything).name(optionalArgs);
 module.exports = {
   name: 'parseBody',
-  func: function (type, options) {
+  func(type, options) {
     if (['json', 'raw', 'text', 'urlencoded'].includes(type)) {
       return middlewareFactory[type](options)(this[0]);
     }
