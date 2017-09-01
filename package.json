@@ -1,6 +1,6 @@
 {
   "name": "yttbody",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Yttrium wrapper for body-parser middleware",
   "main": "lib/index.js",
   "directories": {
