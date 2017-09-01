@@ -1,4 +1,6 @@
 # Yttrium Body Parser
+[![npm version](https://badge.fury.io/js/yttbody.svg)](https://badge.fury.io/js/yttbody)
+
 This package wraps the Express [body-parser](https://github.com/expressjs/body-parser) package to make it usable by the YttriumJS web framework.
 
 ## Installation
